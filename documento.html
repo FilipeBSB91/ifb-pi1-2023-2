@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documento</title>
+
+    <style>
+        * {
+            font-family: 'Times New Roman';
+
+        }
+
+        h1 {
+
+            font-size: 18;
+
+        }
+
+        h2 {
+
+            font-size: 16;
+            text-align: center;
+
+        }
+
+        p {
+
+            font-size: 14;
+            line-height: 0.25;
+
+        }
+
+        #instituicaoOutput {
+
+            font-size: x-large;
+
+        }
+
+        #empresaOutput {
+
+            font-size: x-large;
+
+        }
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+        integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+</head>
+
+<body onload="recuperar()">
+
+
+
+    <fieldset>
+        <legend><button onclick="gerarPDF()">Gerar PDF</button></legend>
+
+        <div id="content">
+            <h1 id="nomeOutput" class="titulo"></h1>
+
+
+            <p id="telOutput" class="texto"></p>
+            <p id="emailOutput" class="texto"></p>
+            <p id="gitOutput" class="texto"></p>
+
+            <hr>
+
+
+
+            <h2>Softskills</h2>
+
+            <p id="checkOutput"></p>
+            <p id="check1Output"></p>
+            <p id="check2Output"></p>
+            <p id="check3Output"></p>
+            <p id="check4Output"></p>
+            <p id="check5Output"></p>
+            <p id="check6Output"></p>
+
+
+            <hr>
+
+            <h2>Formação Acadêmica</h2>
+
+            <p id="instituicaoOutput" class="texto"></p>
+            <p id="cursoOutput" class="texto"></p>
+            <p><b>Início em:</b></p>
+            <p id="inicioCOutput" class="texto"></p>
+            <p><b>Termino em:</b></p>
+            <p id="terminoCOutput" class="texto"></p>
+
+            <hr>
+
+
+            <h2>Certificação</h2>
+
+            <p id="check7Output"></p>
+            <p id="check8Output"></p>
+            <p id="check9Output"></p>
+            <p id="check10Output"></p>
+
+            <hr>
+
+            <h2>Experiência</h2>
+
+            <p id="empresaOutput" class="texto"></p>
+            <p><b>Cargo de:</b></p>
+            <p id="cargoOutput" class="texto"></p>
+            <p><b>Início em:</b></p>
+            <p id="inicioTOutput" class="texto"></p>
+            <p><b>Termino em:</b></p>
+            <p id="terminoTOutput" class="texto"></p>
+
+        </div>
+
+
+        <!--<button type="submit" id="recuperar" >Recuperar</button>-->
+
+
+    </fieldset>
+
+
+    <script>
+
+
+        function recuperar() {
+
+            /* const btnRecuperar = document.querySelector("#recuperar");
+             
+             btnRecuperar.addEventListener("click", (e) => {
+             
+             
+             e.preventDefault();
+             })*/
+
+
+            const nome = localStorage.getItem("nome");
+            const tel = localStorage.getItem("tel");
+            const email = localStorage.getItem("email");
+            const git = localStorage.getItem("git");
+
+
+            const check = localStorage.getItem("check");
+            const check1 = localStorage.getItem("check1");
+            const check2 = localStorage.getItem("check2");
+            const check3 = localStorage.getItem("check3");
+            const check4 = localStorage.getItem("check4");
+            const check5 = localStorage.getItem("check5");
+            const check6 = localStorage.getItem("check6");
+            const check7 = localStorage.getItem("check7");
+            const check8 = localStorage.getItem("check8");
+            const check9 = localStorage.getItem("check9");
+            const check10 = localStorage.getItem("check10");
+
+
+            const inst = localStorage.getItem("inst");
+            const curso = localStorage.getItem("curso");
+            const inicioC = localStorage.getItem("inicioC");
+            const terminoC = localStorage.getItem("terminoC");
+
+
+            const empresa = localStorage.getItem("empresa");
+            const inicioT = localStorage.getItem("inicioC");
+            const terminoT = localStorage.getItem("terminoT");
+
+
+            const cargo = localStorage.getItem("cargo");
+
+
+            document.getElementById("nomeOutput").innerHTML = nome;
+            document.getElementById("telOutput").innerHTML = tel;
+            document.getElementById("emailOutput").innerHTML = email;
+            document.getElementById("gitOutput").innerHTML = git;
+
+
+            document.getElementById("checkOutput").innerHTML = check;
+            document.getElementById("check1Output").innerHTML = check1;
+            document.getElementById("check2Output").innerHTML = check2;
+            document.getElementById("check3Output").innerHTML = check3;
+            document.getElementById("check4Output").innerHTML = check4;
+            document.getElementById("check5Output").innerHTML = check5;
+            document.getElementById("check6Output").innerHTML = check6;
+            document.getElementById("check7Output").innerHTML = check7;
+            document.getElementById("check8Output").innerHTML = check8;
+            document.getElementById("check9Output").innerHTML = check9;
+            document.getElementById("check10Output").innerHTML = check10;
+
+
+            document.getElementById("instituicaoOutput").innerHTML = inst;
+            document.getElementById("cursoOutput").innerHTML = curso;
+            document.getElementById("inicioCOutput").innerHTML = inicioC;
+            document.getElementById("terminoCOutput").innerHTML = terminoC;
+
+
+            document.getElementById("empresaOutput").innerHTML = empresa;
+            document.getElementById("inicioTOutput").innerHTML = inicioT;
+            document.getElementById("terminoTOutput").innerHTML = terminoT;
+
+            document.getElementById("cargoOutput").innerHTML = cargo;
+
+            localStorage.clear();
+
+        }
+
+
+
+    </script>
+
+    <script>
+
+
+        function gerarPDF() {
+
+
+            const item = document.querySelector("#content")
+
+
+            var opt = {
+
+                margin: 15,
+                filename: "curriculo.pdf",
+                html2canvas: { scale: 1 },
+                jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
+
+            };
+
+            html2pdf().set(opt).from(item).save();
+
+
+
+
+
+
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>

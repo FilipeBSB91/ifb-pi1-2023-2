@@ -1,0 +1,150 @@
+/*Configurações de estilo body da pagina*/
+body {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: auto;
+    height: 100vh;
+    overflow-y: hidden;
+
+    background: linear-gradient(#43ea80, #38f8d4);
+  
+
+}
+
+/*Configurações de estilo div container*/
+.container {
+    width: 80%;
+    height: 80vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+
+/*Configurações de estilo div esquerda*/
+.left {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.left img {
+ 
+    width: 80%;
+ 
+}
+
+
+/*Configurações de estilo div direita*/
+.right  {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    
+    background-color: #fff;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, .300);
+
+}
+
+
+.header {
+
+display: flex;
+width: 100%;
+text-align: left;
+padding-left: 10%;
+
+}
+
+/*detalhe h1 header div direta*/
+.header h1::after {
+    content: '';
+    display: block;
+    width: 4rem;
+    height: 0.5rem;
+    background-color: #38f8d4;
+    margin: 0 auto;
+    position: absolute;
+    border-radius: 10px;
+}
+
+.center {
+  
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+  
+}
+
+.center button {
+    display: flex;
+    border: none;
+    background-color: #fff;
+    width: 30%;
+
+}
+
+
+.center img {
+    
+
+    background-color: #fff;
+    width: 50%;
+ 
+ 
+
+}
+
+
+
+
+.bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 10%;
+
+}
+
+.bottom img {
+
+    background-color: #fff;
+    width: 10%;
+}
+
+.bottom button {
+    width: 50%;
+    background-color: #fff;
+    border: none;
+    
+    }
+
+    @media screen and (max-width: 800px) {
+        .left img {
+            display: none;
+        }
+        
+        .container {
+            width: 50%;
+        }
+    
+        .right {
+            width: 100%;
+            
+    
+        }
+    }
+

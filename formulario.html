@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style1.css" />
+    <title>IFB ESTÁGIOS</title>
+
+    <script type='text/javascript'
+        defer>document.addEventListener('DOMContentLoaded', function () { window.setTimeout(document.querySelector('svg').classList.add('animated'), 1000) })</script>
+    ;
+</head>
+
+<body>
+
+    <!--div principal de conteudo-->
+    <div class="container" id="container">
+
+        <!--div lado esquerdo-->
+        <div class="left" id="left"><img src="./img/img(2).svg" alt=""></div>
+
+        <!--div lado direito-->
+        <div class="right" id="right">
+
+            <!--div cabecalho-->
+            <div class="header" id="header">
+                <h1>Responda o formulário:</h1>
+
+            </div>
+
+            <!--div centro-->
+            <div class="center" id="center">
+
+                <form action="#" method="#" target="#">
+
+
+                    <div>
+                        <h2>Dados para contato</h2>
+
+
+                        <label for="nome">Nome:</label><br>
+                        <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo"><br><br>
+
+                        <label for="telefone">Telefone:</label><br>
+                        <input type="tel" id="telefone" name="telefone" placeholder="(xx) xxxxx-xxxx"><br><br>
+
+                        <label for="email">E-mail:</label><br>
+                        <input type="email" id="email" name="email" placeholder="aaa@bbb.ccc"><br><br>
+
+                        <label for="git">Github:</label><br>
+                        <input type="text" id="git" name="git" placeholder="https://github.com/fulano"><br><br>
+
+                    </div>
+
+
+
+
+
+                    <div>
+                        <h2>Softskills</h2>
+
+                        <input type="checkbox" id="check" name="softskills">
+                        <label for="check">Colaboração</label><br>
+
+                        <input type="checkbox" id="check1" name="softskills">
+                        <label for="check1">Flexibilidade</label><br>
+
+                        <input type="checkbox" id="check2" name="softskills">
+                        <label for="check2">Comunicação</label><br>
+
+                        <input type="checkbox" id="check3" name="softskills">
+                        <label for="check3">Escrita</label><br>
+
+                        <input type="checkbox" id="check4" name="softskills">
+                        <label for="check4">Organização</label><br>
+
+                        <input type="checkbox" id="check5" name="softskills">
+                        <label for="check5">Criatividade</label><br>
+
+                        <input type="checkbox" id="check6" name="softskills">
+                        <label for="check6">Liderença</label><br>
+
+                    </div>
+
+
+
+
+
+
+
+
+                    <div>
+                        <h2>Formação Acadêmica</h2>
+                        <label for="instituicao">Instituição de ensino:</label><br>
+                        <input type="text" id="instituicao" name="instituicao" placeholder="Instituição de ensino"><br><br>
+
+                        <label for="curso">Curso:</label><br>
+                        <input type="text" id="curso" name="curso" placeholder="Curso"><br><br>
+
+                        <label for="inicioC">Início:</label>
+                        <input id="inicioC" type="date" /><br>
+
+                        <br>
+
+                        <label for="terminoC">Termino:</label>
+                        <input id="terminoC" type="date" /><br>
+
+
+                    </div>
+
+
+                    <div>
+
+                        <h2>Certificação</h2>
+
+                        <input type="checkbox" id="check7" name="certificacao">
+                        <label for="itil">ITIL</label><br>
+
+                        <input type="checkbox" id="check8" name="certificacao">
+                        <label for="cobit">COBIT</label><br>
+
+                        <input type="checkbox" id="check9" name="certificacao">
+                        <label for="ccna">CCNA</label><br>
+
+                        <input type="checkbox" id="check10" name="certificacao">
+                        <label for="aws">AWS</label><br>
+
+
+                    </div>
+
+
+                    <div>
+                        <h2>Experiência</h2>
+
+                        <label for="empresa">Empresa:</label><br>
+                        <input type="text" id="empresa" name="empresa" placeholder="Empresa"><br><br>
+
+                        <label for="cargo">Cargo:</label><br>
+                        <input type="text" id="cargo" name="cargo" placeholder="Cargo"><br><br>
+
+                        <label for="inicioT">Início:</label>
+                        <input id="inicioT" type="date" /><br>
+
+                        <br>
+
+                        <label for="terminoT">Termino:</label>
+                        <input id="terminoT" type="date" /><br>
+
+
+                    </div>
+                </form>
+            </div>
+
+            <!--div rodape-->
+            <div class="bottom" id="bottom">
+
+                <button id="voltar">
+                    <a href="./index.html">
+                        <img src="./img/voltar.png" alt=""></a></button>
+
+                <button type="submit" id="doc">
+                    <a href="./documento.html" target="_blank">
+                        <img src="./img/baixar-pdf.png" alt=""></a></button>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        const btnDoc = document.querySelector("#doc");
+
+        btnDoc.addEventListener("click", () => {
+
+            doc();
+            save();
+
+
+
+        })
+
+
+
+
+        function doc() {
+
+
+            const nome = document.querySelector("#nome");
+            const tel = document.querySelector("#telefone");
+            const email = document.querySelector("#email");
+            const git = document.querySelector("#git");
+
+
+            const inst = document.querySelector("#instituicao");
+            const curso = document.querySelector("#curso");
+            const inicioC = document.querySelector("#inicioC");
+            const terminoC = document.querySelector("#terminoC");
+
+            const empresa = document.querySelector("#empresa");
+            const cargo = document.querySelector("#cargo");
+            const inicioT = document.querySelector("#inicioT");
+            const terminoT = document.querySelector("#terminoT");
+
+
+
+
+            localStorage.setItem("nome", nome.value);
+            localStorage.setItem("tel", tel.value);
+            localStorage.setItem("email", email.value);
+            localStorage.setItem("git", git.value);
+
+
+
+            localStorage.setItem("inst", inst.value);
+            localStorage.setItem("curso", curso.value);
+            localStorage.setItem("inicioC", inicioC.value);
+            localStorage.setItem("terminoC", terminoC.value);
+
+            localStorage.setItem("empresa", empresa.value);
+            localStorage.setItem("cargo", cargo.value);
+            localStorage.setItem("inicioT", inicioT.value);
+            localStorage.setItem("terminoT", terminoT.value);
+
+
+
+
+        }
+
+        function save() {
+
+            const check = document.getElementById("check");
+            const check1 = document.getElementById("check1");
+            const check2 = document.getElementById("check2");
+            const check3 = document.getElementById("check3");
+            const check4 = document.getElementById("check4");
+            const check5 = document.getElementById("check5");
+            const check6 = document.getElementById("check6");
+            const check7 = document.getElementById("check7");
+            const check8 = document.getElementById("check8");
+            const check9 = document.getElementById("check9");
+            const check10 = document.getElementById("check10");
+
+
+            if (document.getElementById("check").checked) {
+
+                localStorage.setItem("check", "Colaboração");
+            };
+
+            if (document.getElementById("check1").checked) {
+                localStorage.setItem("check1", "Flexibilidade");
+            }
+
+            if (document.getElementById("check2").checked) {
+                localStorage.setItem("check2", "Comunicação");
+            }
+
+            if (document.getElementById("check3").checked) {
+                localStorage.setItem("check3", "Escrita");
+            }
+
+            if (document.getElementById("check4").checked) {
+                localStorage.setItem("check4", "Organização");
+            }
+
+            if (document.getElementById("check5").checked) {
+                localStorage.setItem("check5", "Criatividade");
+            }
+
+            if (document.getElementById("check6").checked) {
+                localStorage.setItem("check6", "Liderança");
+            }
+
+            if (document.getElementById("check7").checked) {
+                localStorage.setItem("check7", "ITIL");
+            }
+
+            if (document.getElementById("check8").checked) {
+                localStorage.setItem("check8", "COBIT");
+            }
+
+            if (document.getElementById("check9").checked) {
+                localStorage.setItem("check9", "CCNA");
+            }
+
+            if (document.getElementById("check10").checked) {
+                localStorage.setItem("check10", "AWS");
+            }
+
+        }
+
+
+
+        /*const btnDoc = document.querySelector("#doc");
+        
+        btnDoc.addEventListener("click", (e) => {
+        
+            e.preventDefault();
+        
+        
+        
+        
+        
+        
+         })
+        
+        
+        console.log(textoInput);*/
+
+    </script>
+</body>
+
+</html>
