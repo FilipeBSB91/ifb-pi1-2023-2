@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalnia:wght@400;500&display=swap');
+
+* {
+font-family: 'Kalnia';
+
+}
+
 /*Configurações de estilo body da pagina*/
 body {
 
